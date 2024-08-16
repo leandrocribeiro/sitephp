@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-08 Thu 16:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Mauro Jacob Honorato" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+    body {
+        font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+    
+    h1, h2, h3 {
+        font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org52ef84a">1. Começando</a>
+<ul>
+<li><a href="#org8b79394">1.1. Aprendizado</a></li>
+<li><a href="#org60c316c">1.2. Iniciando</a></li>
+<li><a href="#orgd238a0d">1.3. Primeira app</a></li>
+</ul>
+</li>
+<li><a href="#org5fab8d2">2. Hello World</a>
+<ul>
+<li><a href="#orgc67c2e4">2.1. Exibindo um texto:</a></li>
+<li><a href="#org4573ea3">2.2. Material Design</a></li>
+<li><a href="#orgd0d3aac">2.3. Exercício</a>
+<ul>
+<li><a href="#orgddba6de">2.3.1. Solução</a></li>
+</ul>
+</li>
+<li><a href="#org39eeecf">2.4. Stateful</a></li>
+<li><a href="#org30f93fb">2.5. Exercício</a></li>
+<li><a href="#org16b5625">2.6. Link para envio:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org52ef84a" class="outline-2">
+<h2 id="org52ef84a"><span class="section-number-2">1.</span> Começando</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Flutter é um framework UI de código aberto do Google para criar aplicativos nativos compilados para mobile, web e desktop a partir de uma única base de código.
+</p>
+</div>
+
+<div id="outline-container-org8b79394" class="outline-3">
+<h3 id="org8b79394"><span class="section-number-3">1.1.</span> Aprendizado</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Sintaxe da linguagem Dart</li>
+<li>Flutter com VS Code</li>
+<li>Documentação</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org60c316c" class="outline-3">
+<h3 id="org60c316c"><span class="section-number-3">1.2.</span> Iniciando</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Para desenvolver no Windows criando apps Android precisamos de:
+</p>
+
+<ul class="org-ul">
+<li>Git</li>
+<li>Android Studio (SDK do Android)</li>
+<li>Visual Studio Code (extensão Flutter)</li>
+</ul>
+
+<p>
+Siga os passos em:
+</p>
+
+<p>
+<a href="https://docs.flutter.dev/get-started/install/windows/mobile">https://docs.flutter.dev/get-started/install/windows/mobile</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd238a0d" class="outline-3">
+<h3 id="orgd238a0d"><span class="section-number-3">1.3.</span> Primeira app</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Novo Projeto</li>
+<li>Selecionando dispositivo</li>
+<li>Hot Reload</li>
+</ul>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/VozGfw5BRcg" title="Flutter Aula1 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>
+Para criar um novo projeto aperte:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">View &gt; Command Pallete.
+</pre>
+</div>
+
+<p>
+Digite o comando abaixo para criar um novo projeto:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">&gt;Flutter: New Project
+</pre>
+</div>
+
+<p>
+Para selecionar um dispositivo use:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">&gt;Flutter: Select Device
+</pre>
+</div>
+
+<p>
+Para executar o projeto criado use:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Run &gt; Start Debugging
+</pre>
+</div>
+
+<p>
+Ou aperte <code>F5</code>.
+</p>
+
+<p>
+Ao mudar algo no código, um disco aparece perto do nome do arquivo que ainda não foi salvo.
+</p>
+
+<p>
+Altere o texto que aparece na tela mudando a string na linha <code>109</code>.
+</p>
+
+<p>
+Para salvar o código use:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">File &gt; Save 
+</pre>
+</div>
+
+<p>
+Ou aperte <code>Ctrl+S</code>, veja que o disco some.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5fab8d2" class="outline-2">
+<h2 id="org5fab8d2"><span class="section-number-2">2.</span> Hello World</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Função main()</li>
+<li>runApp()</li>
+</ul>
+
+<p>
+Toda aplicação Dart inicia em uma função <code>main()</code>.
+</p>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/sFDY9sHscH4" title="Flutter Aula1 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>
+O framework Flutter fornece o método <code>runApp()</code> que recebe um Widget e o mostra na tela.
+</p>
+
+<p>
+Pergunta Gemini:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">O que o método runApp() faz no Flutter?
+</pre>
+</div>
+
+<p>
+O método <code>runApp()</code> é o ponto inicial da execução de uma aplicativo Flutter. Você informa um Widget que será a raiz da app. 
+</p>
+
+<p>
+Em Flutter podemos criar Widgets com estado (Statefull) ou sem estado (Stateless).
+</p>
+
+<p>
+Pergunta Gemini:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">O que é um StatelessWidget em Flutter?
+</pre>
+</div>
+
+<p>
+Vamos deixar o arquivo main.dart assim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dart">import 'package:flutter/material.dart';
+
+void main() {
+  // início de Dart
+  Widget app = const MinhaApp();
+  // início do Flutter:
+  runApp(app);
+}
+
+class MinhaApp extends StatelessWidget {
+  const MinhaApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+</pre>
+</div>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/l9DdpC1i9dw" title="Flutter Aula1 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div id="outline-container-orgc67c2e4" class="outline-3">
+<h3 id="orgc67c2e4"><span class="section-number-3">2.1.</span> Exibindo um texto:</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Um texto em Flutter é mostrado com <code>Text()</code> mas precisa ter um parâmetro ajustado para que funcione:
+</p>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/AqnWxViwRHU" title="Flutter Aula1 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org4573ea3" class="outline-3">
+<h3 id="org4573ea3"><span class="section-number-3">2.2.</span> Material Design</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="https://m3.material.io">Material Design</a> é um sistema para criar produtos com design bonito.
+</p>
+
+<p>
+Em Flutter, <a href="https://api.flutter.dev/flutter/material/MaterialApp-class.html">MaterialApp</a> é o Widget que implementa Material Design nas aplicações.
+</p>
+
+<p>
+No começo MaterialApp ajusta um estilo feio para avisar que o estilo ainda não foi definido. Quem define o estilo na app é Scaffold.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dart">import 'package:flutter/material.dart';
+
+void main() {
+  // início de Dart
+  Widget app = const MinhaApp();
+  // início do Flutter:
+  runApp(app);
+}
+
+class MinhaApp extends StatelessWidget {
+  const MinhaApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Text(
+	'Hello World!',
+	textDirection: TextDirection.ltr,
+      ),
+    );
+  }
+}
+</pre>
+</div>
+
+<p>
+MaterialApp configura o <a href="https://api.flutter.dev/flutter/widgets/Navigator-class.html">Navigator</a> que controla qual página está sendo exibida. O atributo home de MaterialApp ajusta a rota inicial da app.
+</p>
+
+<p>
+O widget <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html">Scaffold</a> implementa a estrutura de layout do Material Design. Agora colocando Scaffold o visual já melhora, a propriedade body de Scaffold define o conteúdo principal.
+</p>
+
+
+<iframe width="966" height="604" src="https://www.youtube.com/embed/MkpO7cIDmIA" title="Flutter Aula1 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-orgd0d3aac" class="outline-3">
+<h3 id="orgd0d3aac"><span class="section-number-3">2.3.</span> Exercício</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li value="1">Usando o Gemini, crie uma app cartão de visitas, use uma pergunta do tipo: "Como criar uma app Flutter simples para mostrar um cartão de visitas contendo apenas os seguintes textos: Nome, Cargo, Empresa, E-mail". A app deve ficar assim:</li>
+</ol>
+
+
+<div id="orga79485b" class="figure">
+<p><img src="https://raw.githubusercontent.com/maurojh/Flutter_aula15_1/main/captura_aula1.png" alt="captura_aula1.png" />
+</p>
+</div>
+
+<p>
+Use seu nome ao invés de Fulano de Tal, seu prontuário ao invés de BA919191 e seu e-mail ao invés de fulano@ifsp.edu.br
+</p>
+</div>
+
+<div id="outline-container-orgddba6de" class="outline-4">
+<h4 id="orgddba6de"><span class="section-number-4">2.3.1.</span> Solução</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<div class="org-src-container">
+<pre class="src src-dart">import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Meu Cartão de Visitas',
+      home: Scaffold(
+	appBar: AppBar(
+	  title: const Text('Meu Cartão'),
+	),
+	body: Center(
+	  child: Column(
+	    mainAxisAlignment: MainAxisAlignment.center,
+	    children: const [
+	      Text('Seu Nome', style: TextStyle(fontSize: 24)),
+	      Text('Seu Cargo'),
+	      Text('Sua Empresa'),
+	      Text('seu.email@exemplo.com'),
+	    ],
+	  ),
+	),
+      ),
+    );
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39eeecf" class="outline-3">
+<h3 id="org39eeecf"><span class="section-number-3">2.4.</span> Stateful</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Até agora nada muda em nossas apps, mas se precisamos alterar uma variável e mudar a tela por conta do novo valor devemos usar StatefulWidget.
+</p>
+
+<iframe width="576" height="360" src="https://www.youtube.com/embed/AJ1yd-tgvsw" title="Flutter Aula1 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="org-src-container">
+<pre class="src src-dart">import 'package:flutter/material.dart';
+
+class ComEstado extends StatefulWidget {
+  const ComEstado({super.key});
+
+  @override
+  State&lt;ComEstado&gt; createState() =&gt; _ComEstadoState();
+}
+
+class _ComEstadoState extends State&lt;ComEstado&gt; {
+  var nome = 'Mauro';
+  var x = 1;
+
+  void muda() {
+    print(nome);
+    // mudança:
+    setState(() {
+      x = x + 1;
+      nome = 'Fulano $x';   
+    });
+    print(nome);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+	body: Center(
+	  child: Column(
+	    children: [
+	      Text('Hello $nome', style: const TextStyle(fontSize: 32),),
+	      ElevatedButton(onPressed: muda, child: const Text('Altera nome'))
+	    ],
+	  ),
+	),
+      ),
+    );
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30f93fb" class="outline-3">
+<h3 id="org30f93fb"><span class="section-number-3">2.5.</span> Exercício</h3>
+<div class="outline-text-3" id="text-2-5">
+<ol class="org-ol">
+<li value="2">Crie uma app que mostra o número 1 com dois botões (par e ímpar). Ao apertar o botão par o app mostra o próximo número par. Ao apertar o botão ímpar o app mostra o próximo número ímpar. Os botões devem funcionar com os próximos números. Exemplo: 1 aperta par mostra 2 aperta par novamente mostra 4 aperta ímpar mostra 5, etc.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org16b5625" class="outline-3">
+<h3 id="org16b5625"><span class="section-number-3">2.6.</span> Link para envio:</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+<a href="https://forms.gle/2UdPU92emv7rzaxS7">https://forms.gle/2UdPU92emv7rzaxS7</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Mauro Jacob Honorato</p>
+<p class="date">Created: 2024-08-08 Thu 16:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
